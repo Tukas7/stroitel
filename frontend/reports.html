@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отчеты</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="/"><img class="logo" src="../img/logo.jpg" alt=""></a>
+            </div>
+            <nav>
+                <ul id="nav-links">
+                    <!-- Навигационные ссылки будут динамически добавляться здесь -->
+                </ul>
+            </nav>
+            <div class="auth-buttons" id="auth-buttons">
+                <button id="login-btn">Вход</button>
+            </div>
+            <div class="profile-buttons" id="profile-buttons" style="display: none;">
+                <span id="welcome-message"></span>
+                <button id="logout-btn">Выйти</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="reports-section">
+            <div class="container">
+                <h1>Отчеты</h1>
+                <form id="create-report-form">
+                    <label for="report_type">Тип отчета</label>
+                    <select id="report_type" name="report_type" required>
+                        <option value="sales">Продажи</option>
+                        <option value="inventory">Запасы</option>
+                    </select>
+                    
+                    <label for="content">Описание</label>
+                    <textarea id="content" name="content" required></textarea>
+                    
+                    <button type="submit">Создать отчет</button>
+                </form>
+
+                <button id="download-report-btn">Скачать отчет</button>
+
+                <div id="reports-list"></div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Учет строительных материалов. Все права защищены.</p>
+        </div>
+    </footer>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <h2>Вход</h2>
+            <form id="login-form">
+                <label for="username">Имя пользователя</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

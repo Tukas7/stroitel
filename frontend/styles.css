@@ -1,0 +1,319 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4CAF50;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header .logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #388E3C;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+header nav ul li a:hover {
+    background: #2E7D32;
+}
+
+.auth-buttons, .profile-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-buttons button, .profile-buttons button {
+    background: #fff;
+    color: #4CAF50;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.auth-buttons button:hover, .profile-buttons button:hover {
+    background: #388E3C;
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.welcome-section, .catalog-section, .add-material-section, .reports-section, .manage-users-section {
+    text-align: center;
+    padding: 2rem 0;
+    background: #fff;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.welcome-section h1, .catalog-section h1, .add-material-section h1, .reports-section h1, .manage-users-section h1 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.welcome-section p, .catalog-section p, .add-material-section p, .reports-section p, .manage-users-section p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.quick-links .btn {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    background: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.quick-links .btn:hover {
+    background: #388E3C;
+}
+
+.interactive-content {
+    padding: 2rem 0;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.interactive-elements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.chart, .form {
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.chart:hover, .form:hover {
+    transform: translateY(-10px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form label {
+    text-align: left;
+    color: #333;
+}
+
+form input, form textarea, form select, form button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+form button {
+    background: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #388E3C;
+}
+
+.user-item, .material-item {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.user-item h2, .material-item h2 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.user-item p, .material-item p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.user-item button, .material-item button {
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+    margin-right: 0.5rem;
+}
+
+.user-item button:hover, .material-item button:hover {
+    background: #388E3C;
+    color: #fff;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .social-links {
+    margin-top: 0.5rem;
+}
+
+footer .social-links a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background: #4CAF50;
+    color: #fff;
+}
+
+td button {
+    margin-right: 0.5rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.report-item {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+canvas {
+    max-width: 100%;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
