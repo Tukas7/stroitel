@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 const JWT_SECRET = 'your_jwt_secret';
 
 // Middleware для проверки токена и роли
