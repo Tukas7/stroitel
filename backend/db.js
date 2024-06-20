@@ -4,7 +4,7 @@ const { Pool } = require('pg');
 const pool = new Pool({
     user: 'postgres',
     host: 'monorail.proxy.rlwy.net',
-    database: 'postgres',
+    database: 'railway',
     password: 'iVLJcjIHCfPxyWARweRYhRPEqKqEtQGT',
     port: 32498,
 });
