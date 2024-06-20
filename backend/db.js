@@ -5,8 +5,8 @@ const pool = new Pool({
     user: 'postgres',
     host: 'monorail.proxy.rlwy.net',
     database: 'railway',
-    password: 'VABbgCjkjLffcsYvmgjOYcWeUmolovRb',
-    port: 13266,
+    password: 'aoAXvxnEKrTwEXehFtLnJlbwMJFLzmXq',
+    port: 48757,
 });
 
 module.exports = pool;
