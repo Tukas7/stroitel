@@ -15,7 +15,7 @@ exports.addMaterial = async (req, res) => {
 
     try {
         const result = await pool.query(
-            'INSERT INTO materials (name, description, price, quantity) VALUES ($1, $2, $3, $4) RETURNING *',
+            'INSERT INTO materials (name, description, price, quantity) VALUES ($1, $2, $3, $4)',
             [name, description, price, quantity]
         );
         res.status(201).json(result.rows[0]);
