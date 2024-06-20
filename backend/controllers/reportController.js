@@ -31,13 +31,10 @@ exports.generateReportPDF = async (req, res) => {
     try {
         const materialsResult = await pool.query('SELECT * FROM materials');
         const usersResult = await pool.query('SELECT * FROM users');
-        const deletedMaterialsResult = await pool.query('SELECT * FROM materials WHERE deleted = true');
-        const deletedUsersResult = await pool.query('SELECT * FROM users WHERE deleted = true');
-
+       
         const materials = materialsResult.rows;
         const users = usersResult.rows;
-        const deletedMaterials = deletedMaterialsResult.rows.length;
-        const deletedUsers = deletedUsersResult.rows.length;
+        
 
         const totalMaterials = materials.length;
         const totalUsers = users.length;
@@ -64,12 +61,9 @@ exports.generateReportPDF = async (req, res) => {
 
         doc.fontSize(16).text('Информация о сотрудниках:');
         doc.fontSize(12).text(`Всего сотрудников: ${totalUsers}`);
-        doc.fontSize(12).text(`Новых сотрудников: ${totalUsers - deletedUsers}`);
-        doc.fontSize(12).text(`Удаленных сотрудников: ${deletedUsers}`);
         doc.moveDown();
 
-        doc.fontSize(16).text('Информация о материалах:');
-        doc.fontSize(12).text(`Удаленных материалов: ${deletedMaterials}`);
+        
         doc.moveDown();
 
         doc.fontSize(16).text('Детальная информация о материалах:');

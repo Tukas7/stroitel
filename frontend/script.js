@@ -521,3 +521,37 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchReports();
     }
 });
+const addmaterials = document.getElementById('add-material-form')
+if (addmaterials) {
+    addmaterials.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const description = document.getElementById('description').value;
+        const price = document.getElementById('price').value;
+        const quantity = document.getElementById('quantity').value;
+       
+
+        fetch(`/api/addMaterial`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify({ name, description, price, quantity })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+            } else {
+                alert('Товар успешно добавлен');
+                
+                
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+}

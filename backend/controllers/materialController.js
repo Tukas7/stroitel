@@ -10,20 +10,6 @@ exports.getAllMaterials = async (req, res) => {
     }
 };
 
-exports.addMaterial = async (req, res) => {
-    const { name, description, price, quantity } = req.body;
-
-    try {
-        const result = await pool.query(
-            'INSERT INTO materials (name, description, price, quantity) VALUES ($1, $2, $3, $4) RETURNING *',
-            [name, description, price, quantity]
-        );
-        res.status(201).json(result.rows[0]);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-};
-
 exports.updateMaterial = async (req, res) => {
     const { id } = req.params;
     const { name, description, price, quantity } = req.body;

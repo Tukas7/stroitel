@@ -7,13 +7,14 @@ const pool = require('./db');
 const userRoutes = require('./routes/userRoutes');
 const materialRoutes = require('./routes/materialRoutes');
 const reportRoutes = require('./routes/reportRoutes');
+const addRoutes = require('./routes/addRoutes.js');
 const { authenticateToken, authorizeRole } = require('./middleware/auth');
 
 const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 const JWT_SECRET = 'your_jwt_secret';
 
 // Middleware для проверки токена и роли
@@ -22,6 +23,7 @@ const JWT_SECRET = 'your_jwt_secret';
 // Используем маршруты для пользователей, материалов и отчетов
 app.use('/api/users', userRoutes);
 app.use('/api/materials', materialRoutes);
+app.use('/api/addMaterial', addRoutes);
 app.use('/api/reports', authenticateToken, authorizeRole(['admin', 'manager']), reportRoutes);
 
 // Маршруты для HTML-страниц
